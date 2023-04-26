@@ -6,6 +6,7 @@ const productosController= require("../controllers/productosController");
 
 router.get("/home",productosController.obtenerProductoHome);
 router.get("/:id",authMidd,productosController.obtenerProductoCat);
+router.get("/producto/:id",authMidd,productosController.obtenerProductoId);
 router.post("/",authMidd,productosController.crearProducto);
 router.put("/:id",authMidd,productosController.actualizarProducto);
 router.delete("/:id",authMidd,productosController.borrarProducto);

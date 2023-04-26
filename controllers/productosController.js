@@ -22,7 +22,7 @@ exports.obtenerProductoCat = async (req, res) => {
 
 };
 
-/**exports.obtenerProductoId = async (req, res) => {
+exports.obtenerProductoId = async (req, res) => {
     const{id}=req.params;
     try{
         const producto =await Productos.findById(id);
@@ -30,7 +30,7 @@ exports.obtenerProductoCat = async (req, res) => {
     }catch(error){
         console.log(error);
     }
-};**/
+};
 
 exports.crearProducto = async (req, res) => {
     const producto = new Productos(req.body);
@@ -61,6 +61,9 @@ exports.actualizarProducto = async (req, res) => {
         producto.descripcion = req.body.descripcion || producto.descripcion;
         producto.stock = req.body.stock || producto.stock;
         producto.precio = req.body.precio || producto.precio;
+        producto.anho = req.body.anho || producto.anho;
+        producto.autor = req.body.autor || producto.autor;
+        producto.editorial = req.body.editorial || producto.editorial;
         producto.imagen = req.body.imagen || producto.imagen;
         producto.categoriaId = req.body.categoriaId || producto.categoriaId;
         producto.save();
